@@ -9,6 +9,6 @@ services:
       - "/home/pi/Docker/homeassistant/config:/config"    
       - "/home/pi/Docker/homeassistant/media:/media"
       - "/home/pi/Docker/homeassistant/config/www:/media/www"
-#     devices:
-#       - "/dev/snd"
-#     privileged: true
+    devices:
+      - "/dev/snd"
+    privileged: true
