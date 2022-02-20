@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  homeassistant:
+    image: homeassistant/raspberrypi4-homeassistant:stable
+    network_mode: "host"
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/home/pi/Docker/homeassistant/config:/config"    
+      - "/home/pi/Docker/homeassistant/media:/media"
+      - "/home/pi/Docker/homeassistant/config/www:/media/www"
+#     devices:
+#       - "/dev/snd"
+#     privileged: true
