@@ -1,2 +1,3 @@
-# rpi-repetier-server-docker
-Dockerfile for rpi-repetier-server
+# Woodcafe Docker Compose
+
+docker compose files for woodcafe

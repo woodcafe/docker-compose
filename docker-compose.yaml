@@ -1,14 +1,27 @@
 version: "3.7"
 
 services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce:latest
+    restart: unless-stopped
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/pi/Docker/portainer/data:/data
+
   homeassistant:
-    image: homeassistant/raspberrypi4-homeassistant:stable
-    network_mode: "host"
+    container_name: homeassistant
+    # image: homeassistant/raspberrypi4-homeassistant:stable
+    build: ../homeassistant/docker
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "/home/pi/Docker/homeassistant/config:/config"    
       - "/home/pi/Docker/homeassistant/media:/media"
       - "/home/pi/Docker/homeassistant/config/www:/media/www"
-    devices:
-      - "/dev/snd"
+    restart: unless-stopped
     privileged: true
+    network_mode: host
+    #devices:
+      #- "/dev/snd"
