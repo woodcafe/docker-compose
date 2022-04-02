@@ -7,3 +7,4 @@ docker compose files for woodcafe
 |--|--|
 |Portainer | 9000 |
 |Homeassistant | 8123 |
+|ESPHome | 6052 |
