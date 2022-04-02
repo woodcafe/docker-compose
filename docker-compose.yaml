@@ -25,3 +25,13 @@ services:
     network_mode: host
     #devices:
       #- "/dev/snd"
+
+  esphome:
+    container_name: esphome
+    image: esphome/esphome
+    volumes:
+      - /home/pi/Docker/homeassistant/esphome/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    privileged: true
+    network_mode: host
